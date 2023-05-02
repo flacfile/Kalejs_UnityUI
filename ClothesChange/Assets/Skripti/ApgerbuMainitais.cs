@@ -27,4 +27,11 @@ public class ApgerbuMainitais : MonoBehaviour {
         }
         bodypart.sprite = options[currentOption];
     }
+
+
+    public void RandomCharacter()
+    {
+        currentOption = Random.Range(0, options.Count - 1);
+        bodypart.sprite = options[currentOption];
+    }
 }
