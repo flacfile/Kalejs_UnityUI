@@ -14,7 +14,7 @@ public class MainitLielumu : MonoBehaviour
         float pasreizejaVertiba = platumaSlider.GetComponent<Slider>().value;
         float augstums = attels.transform.localScale.y;
 
-        Vector2 newScale = new Vector2(67f * pasreizejaVertiba, augstums);
+        Vector2 newScale = new Vector2(90f * pasreizejaVertiba, augstums);
         attels.transform.localScale = newScale;
     }
     public void mainitGarums()
@@ -22,7 +22,7 @@ public class MainitLielumu : MonoBehaviour
         float pasreizejaVertiba = garumaSlider.GetComponent<Slider>().value;
         float platum = attels.transform.localScale.x;
 
-        Vector2 newScale = new Vector2(platum, 67f * pasreizejaVertiba);
+        Vector2 newScale = new Vector2(platum, 90f * pasreizejaVertiba);
         attels.transform.localScale = newScale;
     }
 }

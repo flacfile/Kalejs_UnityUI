@@ -23,7 +23,7 @@ public class VarduParadisana : MonoBehaviour {
             return;
         }
         vecumsNum = V;
-        tekstaAttelosana.GetComponent<Text>().text = "Laupītājam " + vardsS +" ir "+ vecumsNum+" gadi";
+        tekstaAttelosana.GetComponent<Text>().text = "Varonim " + vardsS +" ir "+ vecumsNum+" gadi";
         kluda.GetComponent<Text>().text = "";
     }
 }
