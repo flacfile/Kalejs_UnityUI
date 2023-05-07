@@ -5,30 +5,24 @@ using UnityEngine.UI;
 
 public class MainitLielumu : MonoBehaviour
 {
-    public GameObject mainigaisAttels;
-    public Slider platumaSlaideris;
-    public Slider garumaSlaideris;
-
-    private float platums;
-    private float garums;
-
-    private void Start()
-    {
-        platums = mainigaisAttels.transform.localScale.x;
-        garums = mainigaisAttels.transform.localScale.y;
-    }
+    public GameObject attels;
+    public GameObject platumaSlider;
+    public GameObject garumaSlider;
 
     public void mainitPlatumu()
     {
-        float pasreizejaVertiba = platumaSlaideris.value;
+        float pasreizejaVertiba = platumaSlider.GetComponent<Slider>().value;
+        float augstums = attels.transform.localScale.y;
 
-        mainigaisAttels.transform.localScale = new Vector2(platums * pasreizejaVertiba, garums);
+        Vector2 newScale = new Vector2(67f * pasreizejaVertiba, augstums);
+        attels.transform.localScale = newScale;
     }
-
-    public void mainitGarumu()
+    public void mainitGarums()
     {
-        float pasreizejaVertiba = garumaSlaideris.value;
+        float pasreizejaVertiba = garumaSlider.GetComponent<Slider>().value;
+        float platum = attels.transform.localScale.x;
 
-        mainigaisAttels.transform.localScale = new Vector2(platums, garums * pasreizejaVertiba);
+        Vector2 newScale = new Vector2(platum, 67f * pasreizejaVertiba);
+        attels.transform.localScale = newScale;
     }
 }

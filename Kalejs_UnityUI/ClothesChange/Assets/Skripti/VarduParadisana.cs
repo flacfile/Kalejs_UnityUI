@@ -5,18 +5,27 @@ using UnityEngine.UI;
 
 public class VarduParadisana : MonoBehaviour {
 
-    public string teksts;
-    public GameObject ievadLauks;
+    public string vardsS;
+    public int vecumsNum;
+    public GameObject vards;
+    public GameObject vecums;
     public GameObject tekstaAttelosana;
-    int indekss;
-    public int vecums;
+    public GameObject kluda;
+
     public void UzglabatTekstu()
     {
-     
-        teksts = ievadLauks.GetComponent<InputField>().text;
-        
-        tekstaAttelosana.GetComponent<Text>().text =  teksts.ToUpper() + "!";
+        vardsS = vards.GetComponent<InputField>().text;
+        int V;
 
+        if (!int.TryParse(vecums.GetComponent<InputField>().text, out V))
+        {
+            kluda.GetComponent<Text>().text = "Kļūda!!!";
+            return;
+        }
+        vecumsNum = V;
+        tekstaAttelosana.GetComponent<Text>().text = "Laupītājam " + vardsS +" ir "+ vecumsNum+" gadi";
+        kluda.GetComponent<Text>().text = "";
     }
-
 }
+
+
